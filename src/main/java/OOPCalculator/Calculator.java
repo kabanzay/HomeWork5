@@ -17,5 +17,6 @@ public class Calculator {
         String input = scanner.next();
         Operation operation = calculatorStringParser.parse(input);
         System.out.printf("%.4f",operation.operate());
+
     }
 }

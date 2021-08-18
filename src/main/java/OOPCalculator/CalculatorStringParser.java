@@ -7,15 +7,21 @@ import java.util.regex.Pattern;
 
 public class CalculatorStringParser {
     public Operation parse(String request) {
-        double firstValue, secondValue;
+        double firstValue = 0, secondValue=0;
         String operation;
         //избавимся от лишних пробелов
         request = request.trim();
         //отделим цифры
-        String[] array = request.split("[+\\-\\/*]");
-        //распарсим String  в double
-        firstValue = Double.parseDouble(array[0]);
-        secondValue = Double.parseDouble(array[1]);
+        try {
+            String[] array = request.split("[+\\-\\/*]");
+            //распарсим String  в double
+            firstValue = Double.parseDouble(array[0]);
+            secondValue = Double.parseDouble(array[1]);
+        }catch (NumberFormatException|ArrayIndexOutOfBoundsException e){
+            System.out.println("Невозможно корректно распарсить строку. Возможно вы ввели что-то не так");
+            e.printStackTrace();
+            System.exit(1);
+        }
         //определим операцию
         Pattern p = Pattern.compile("[+\\-\\/*]");
         Matcher m = p.matcher(request);
