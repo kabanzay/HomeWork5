@@ -11,7 +11,6 @@ public class DivideOperation implements Operation {
     public Double operate() {
         if (num2 ==0){
             throw new ArithmeticException("Попытка деления на 0");
-
         }
         return num1/num2;
     }

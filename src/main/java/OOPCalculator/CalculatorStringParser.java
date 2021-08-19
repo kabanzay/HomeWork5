@@ -20,7 +20,7 @@ public class CalculatorStringParser {
         }catch (NumberFormatException|ArrayIndexOutOfBoundsException e){
             System.out.println("Невозможно корректно распарсить строку. Возможно вы ввели что-то не так");
             e.printStackTrace();
-            System.exit(1);
+            throw e;
         }
         //определим операцию
         Pattern p = Pattern.compile("[+\\-\\/*]");
