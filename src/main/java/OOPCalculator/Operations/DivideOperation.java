@@ -8,7 +8,7 @@ public class DivideOperation implements Operation {
         this.num2 = num2;
     }
 
-    public Double operate() {
+    public Double operate()  {
         if (num2 ==0){
             throw new ArithmeticException("Попытка деления на 0");
         }
