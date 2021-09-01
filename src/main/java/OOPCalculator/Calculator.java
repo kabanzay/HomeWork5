@@ -14,7 +14,7 @@ public class Calculator {
     public void calculate() {
         System.out.println("Введите выражение состоящее из 2-х дробных чисел и +,-,/,*");
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
+        String input = scanner.nextLine();
         Operation operation = calculatorStringParser.parse(input);
         System.out.printf("%.4f",operation.operate());
 
